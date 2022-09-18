@@ -27,7 +27,7 @@ npm install react-timer-and-stopwatch
 There are three ways to set up the timer hook: countdown with a duration of time, countdown with a [Unix](https://en.wikipedia.org/wiki/Unix_time) timestamp in milliseconds, or as a stopwatch.
 
 ### Duration timer
-To set up a timer with a duration, use the `timerWithDuration` object property on **useTimer**'s `options.create` object parameter. Inside of `timerWithDuration` are two properties, [`time`](#common-properties) (required) and the optional `directionOfTimeForward` bool property. The [`time`](#common-properties) property takes either a number of milliseconds or alternatively a [time object](#terminology). The optional `directionOfTimeForward` bool property controls whether the direction of the timer will flow forward (start at 00:00:00) or backward (start at end, finish at 00:00:00). Time flows backward by default on Duration timers.
+To set up a timer with a duration, use the `timerWithDuration` object property on **useTimer**'s `options.create` object parameter. Inside of `timerWithDuration` are two properties, [`time`](#common-parameters) (required) and the optional `directionOfTimeForward` bool property. The [`time`](#common-parameters) property takes either a number of milliseconds or alternatively a [time object](#terminology). The optional `directionOfTimeForward` bool property controls whether the direction of the timer will flow forward (start at 00:00:00) or backward (start at end, finish at 00:00:00). Time flows backward by default on Duration timers.
 #### Example
 ```jsx
 const SomeReactComponent = () => {
