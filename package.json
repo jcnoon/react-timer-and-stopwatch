@@ -1,0 +1,45 @@
+{
+  "name": "react-timer-and-stopwatch",
+  "version": "0.5.0",
+  "description": "A countdown timer and stopwatch hook for React",
+  "license": "MIT",
+  "type": "module",
+  "author": "Jacob Noonan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcnoon/react-timer-and-stopwatch.git"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "vitest run",
+    "test-watch": "vitest",
+    "build": "rm -rf dist && npm test && microbundle"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "hooks",
+    "timer",
+    "timers",
+    "stopwatch",
+    "stopwatches",
+    "countdown",
+    "unix",
+    "time"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "microbundle": "^0.15.1",
+    "typescript": "^4.2.4",
+    "vite": "^3.1.1",
+    "vitest": "^0.23.2"
+  }
+}
