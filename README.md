@@ -260,7 +260,7 @@ Everything on the timer object returned from useTimer
 | `pauseTimer`  | function | Pauses timer/stopwatch when called |
 | `resumeTimer`  | function | Resumes timer/stopwatch when called |
 | `togglePause`  | function | When called it unpauses if timer/stopwatch is paused, pauses if timer/stopwatch is unpaused |
-| `resetTimer`  | function | Resets a timer/stopwatch to the beginning with original supplied options |
+| `resetTimer`  | function | Resets a timer/stopwatch to the beginning with originally supplied options, or with adjusted options, or with replaced options |
 | `addTime`  | function | Adds time to timer/stopwatch |
 | `subtractTime`  | function | Subtracts time from timer/stopwatch |
 
