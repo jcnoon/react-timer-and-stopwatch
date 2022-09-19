@@ -30,6 +30,7 @@ There are three ways to set up the timer hook: countdown with a duration of time
 To set up a timer with a duration, use the `timerWithDuration` object property on **useTimer**'s `options.create` object parameter. Inside of `timerWithDuration` are two properties, [`time`](#common-parameters) (required) and the optional `directionOfTimeForward` bool property. The [`time`](#common-parameters) property takes either a number of milliseconds or alternatively a [time object](#terminology). The optional `directionOfTimeForward` bool property controls whether the direction of the timer will flow forward (start at 00:00:00) or backward (start at end, finish at 00:00:00). Time flows backward by default on Duration timers.
 #### Example
 ```jsx
+import { useTimer } from "react-timer-and-stopwatch";
 const SomeReactComponent = () => {
     const timer = useTimer({
         create: {
@@ -60,6 +61,7 @@ etc.
 To set up a timer with a Unix timestamp, use the `timerWithUnixTimestamp` object property on **useTimer**'s `options.create` object parameter.
 #### Example
 ```jsx
+import { useTimer } from "react-timer-and-stopwatch";
 const SomeReactComponent = () => {
     const unixTimestamp = Date.now() + 10000; // 10 seconds in the future
     const timer = useTimer({
@@ -86,6 +88,7 @@ It's also easy to integrate a Unix timer with popular JavaScript time libraries 
 
 #### Moment.js example
 ```jsx
+import { useTimer } from "react-timer-and-stopwatch";
 import moment from 'moment';
 const SomeReactComponent = () => {
     const unixTimestamp = moment('2025-08-14T11:04:10.570Z').valueOf(); // Using an ISO 8601 timestamp
@@ -108,6 +111,7 @@ const SomeReactComponent = () => {
 To set up a stopwatch, set the property `stopwatch` to an object on **useTimer**'s `options.create` object parameter. There are two properties on the `options` object, [`intervalRate` and `includeMilliseconds`](#misc-options), which can be useful here. If you'd like your stopwatch to count by milliseconds and show milliseconds in the output, change the optional properties `intervalRate` to something smaller than 1000 and `includeMilliseconds` to true in `options`. If not included, by default the stopwatch will count by seconds and not show milliseconds in timerText. It will also autostart by default, which can be disabled by setting the optional `options` property `autostart` to false.
 #### Example
 ```jsx
+import { useTimer } from "react-timer-and-stopwatch";
 const SomeReactComponent = () => {
     const timer = useTimer({
         create: {
