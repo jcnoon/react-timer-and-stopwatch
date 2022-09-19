@@ -154,7 +154,50 @@ const SomeReactComponent = () => {
     );
 }
 ```
-**resetTimer** can reset the timer/stopwatch with the original options if no parameter is included, or you can include an options object in the first optional parameter (`adjustedOptions`) to either adjust the old options or replace the old options entirely. If you want to replace them, set the second optional parameter (`replaceOptions`) to true and be sure to include a new `create` object on your new options object.  
+**resetTimer** can reset the timer/stopwatch with the original options if no parameter is included, or you can include an options object in the first optional parameter (`adjustedOptions`) to either adjust the old options or replace the old options entirely. If you want to replace them, set the second optional parameter (`replaceOptions`) to true and be sure to include a new `create` object on your new options object.
+#### Example
+```jsx
+const SomeReactComponent = () => {
+    const timer = useTimer({
+        create: {
+            timerWithDuration: {
+                time: { // Set to a duration of 30 seconds
+                    seconds: 30
+                }
+            }
+        }
+    });
+    const {togglePause, pauseTimer, resumeTimer, resetTimer, timerIsPaused, timerText} = timer;
+    const resetAndAdjustOptions = () => { // These new options will essentially be patched onto the old options
+        resetTimer({
+            autoplay: false,
+            includeMilliseconds: true,
+            intervalRate: 37
+        });
+    }
+    const resetAndReplaceOptions = () => { // This will replace the old options entirely, effectively creating a new timer/stopwatch on reset
+        resetTimer({
+            create: {
+                stopwatch: {} // The timer was a Duration countdown timer, but after reset it will be a Stopwatch
+            },
+            includeMilliseconds: true,
+            intervalRate: 37
+        },
+        true);
+    }
+    const resetTimerWithOldOptions = () => {
+        resetTimer();
+    }
+    return (
+        <>
+            <span>Time Left: {timerText}</span>
+            <button onClick={resetAndAdjustOptions}>Reset Timer and Adjust Options</button>
+            <button onClick={resetAndReplaceOptions}>Reset Timer and Replace Options</button>
+            <button onClick={resetTimerWithOldOptions}>Reset Timer with Old Options</button>
+        </>
+    );
+}
+```
 
 There are also functions to add and subtract time from the current timer/stopwatch. These are **addTime** and **subtractTime**. Both take either a number of milliseconds or alternatively a [time object](#terminology).
 #### Example
