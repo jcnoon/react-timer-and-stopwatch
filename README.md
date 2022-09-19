@@ -145,12 +145,13 @@ const SomeReactComponent = () => {
             <button onClick={pauseTimer} disabled={timerIsPaused}>Pause</button>
             <button onClick={resumeTimer} disabled={!timerIsPaused}>Resume</button>
             <button onClick={togglePause} disabled={!timerIsPaused}>Toggle Pause</button>
-            <button onClick={resetTimer}>Reset Timer</button>
+            <button onClick={() => resetTimer()}>Reset Timer</button>
         </>
     );
 }
-
 ```
+**resetTimer** can reset the timer/stopwatch with the original options if no parameter is included, or you can include an options object in the first optional parameter (`adjustedOptions`) to either adjust the old options or replace the old options entirely. If you want to replace them, set the second optional parameter (`replaceOptions`) to true and be sure to include a new `create` object on your new options object.  
+
 There are also functions to add and subtract time from the current timer/stopwatch. These are **addTime** and **subtractTime**. Both take either a number of milliseconds or alternatively a [time object](#terminology).
 #### Example
 ```jsx
