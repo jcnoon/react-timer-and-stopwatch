@@ -167,7 +167,7 @@ const SomeReactComponent = () => {
             }
         }
     });
-    const {togglePause, pauseTimer, resumeTimer, resetTimer, timerIsPaused, timerText} = timer;
+    const {resetTimer timerText} = timer;
     const resetAndAdjustOptions = () => { // These new options will essentially be patched onto the old options
         resetTimer({
             autoplay: false,
