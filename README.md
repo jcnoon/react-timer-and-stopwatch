@@ -9,7 +9,7 @@ A simple out of the box but highly customizable timer and stopwatch hook for Rea
     - [Stopwatch](#stopwatch)
 - [Control Functions](#control-functions)
 - [Customization](#customization)
-    - [Display](#display)
+    - [timerText](#timerText)
     - [Callbacks](#callbacks)
     - [Misc Options](#misc-options)
 - [Timer Properties](#timer-properties)
