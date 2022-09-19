@@ -99,6 +99,17 @@ export function getTimerController(timerControllerRef: MutableRefObject<TimerCon
     return timerControllerRef.current;
 }
 
+export function handleOptionsReset(oldOptions: UseTimerOptions, adjustedOptions?: Partial<UseTimerOptions>, replaceOptions?: boolean): UseTimerOptions {
+    if (adjustedOptions) {
+        if (replaceOptions) {
+            if (!adjustedOptions.create) return { ...oldOptions, ...adjustedOptions };
+            return { create: { }, ...adjustedOptions };
+        }
+        return { ...oldOptions, ...adjustedOptions };
+    }
+    return oldOptions;
+}
+
 export function useInterval(cb: () => void, delay: number | null) {
     const savedCB: React.MutableRefObject<() => void> = useRef<() => void>(function() {});
   

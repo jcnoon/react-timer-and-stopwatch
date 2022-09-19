@@ -6,6 +6,7 @@ import {
     createTimerController,
     finishTimer,
     getTimerController,
+    handleOptionsReset,
     initializeTimerState,
     shouldTimerContinue,
     timerTickState,
@@ -36,12 +37,13 @@ export function useTimer(options: UseTimerOptions): Timer {
         if ((!timerState.paused || timerState.timerIsFinished) && !timerController.pastFinish) return;
         timerDispatch({ type: 'resume' });
     }
-    function resetTimer(): void {
+    function resetTimer(adjustedOptions?: Partial<UseTimerOptions>, replaceOptions?: boolean): void {
         if (timerController.creationType === CreationType.UnixTimestamp) return;
-        timerControllerRef.current = createTimerController(options);
+        const newOptions = handleOptionsReset(options, adjustedOptions, replaceOptions);
+        timerControllerRef.current = createTimerController(newOptions);
         timerDispatch({
             type: 'resetTimer',
-            payload: initializeTimerState(options, timerControllerRef.current)
+            payload: initializeTimerState(newOptions, timerControllerRef.current)
         });
     }
     function addTime(time: Time): void {
