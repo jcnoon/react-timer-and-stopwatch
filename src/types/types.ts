@@ -188,7 +188,7 @@ export interface Timer {
 
     /** Resets timer to beginning and to original options supplied to useTimer if no parameters included.
      * If you'd like to add or change some options to the timer/stopwatch, include an options object in the first parameter.
-     * If you'd like that object to replace the original entirely (rather than adjust it), set the second parameter to true.
+     * If you'd like that object to replace the original options entirely (rather than adjust it), set the second parameter to true.
      * @param {Partial<UseTimerOptions>} [adjustedOptions] - a partial useTimer options object to adjust your options, or a full useTimer options object if you'd like to replace it
      * @param {boolean} [replaceOptions] - Indicating whether you want to replace the old original options entirely with your new one, or just adjust a few included settings on it and keep the rest of the old options.*/
     resetTimer: (adjustedOptions?: Partial<UseTimerOptions>, replaceOptions?: boolean) => void
