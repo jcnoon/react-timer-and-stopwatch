@@ -57,7 +57,7 @@ etc.
 ***
 
 ### Unix timer
-To set up a timer with a Unix timestamp, use the `timerWithTimestamp` object property on **useTimer**'s `options.create` object parameter.
+To set up a timer with a Unix timestamp, use the `timerWithUnixTimestamp` object property on **useTimer**'s `options.create` object parameter.
 #### Example
 ```jsx
 const SomeReactComponent = () => {
