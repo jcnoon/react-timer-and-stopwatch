@@ -1,6 +1,6 @@
 {
   "name": "react-timer-and-stopwatch",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "A countdown timer and stopwatch hook for React",
   "license": "MIT",
   "type": "module",
@@ -25,6 +25,7 @@
     "react",
     "hook",
     "hooks",
+    "react-hooks",
     "timer",
     "timers",
     "stopwatch",
@@ -32,7 +33,8 @@
     "countdown",
     "unix",
     "time",
-    "timestamp"
+    "timestamp",
+    "typescript"
   ],
   "peerDependencies": {
     "react": ">=16.8.1"
