@@ -23,6 +23,7 @@
   ],
   "keywords": [
     "react",
+    "hook",
     "hooks",
     "timer",
     "timers",
@@ -30,7 +31,8 @@
     "stopwatches",
     "countdown",
     "unix",
-    "time"
+    "time",
+    "timestamp"
   ],
   "peerDependencies": {
     "react": ">=16.8.1"
