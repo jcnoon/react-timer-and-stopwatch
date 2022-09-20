@@ -7,6 +7,7 @@ A simple out of the box but highly customizable timer and stopwatch hook for Rea
     - [Duration timer](#duration-timer)
     - [Unix timer](#unix-timer)
     - [Stopwatch](#stopwatch)
+- [Timer Status Booleans](#timer-status-booleans)
 - [Control Functions](#control-functions)
 - [Customization](#customization)
     - [timerText](#timerText)
@@ -128,8 +129,12 @@ const SomeReactComponent = () => {
 If you'd like to start the stopwatch past 0, you can set the optional `startAtMilliseconds` property on `create.stopwatch` to the number of milliseconds you wish.
 ***
 
+## Timer Status Booleans
+There are three booleans on the the timer object returned by useTimer which reflect whether the timer is finished (`timerIsFinished`), paused (`timerIsPaused`), or past its finish (`pastFinish`). The only time `pastFinish` can be true is with a Unix timer.
+
+***
 ## Control Functions
-There are functions returned by **useTimer** which can pause, resume, and reset the timer/stopwatch. These are **togglePause**, **pauseTimer**, **resumeTimer**, and **resetTimer**. There's also a boolean returned, `timerIsPaused`, which shows if the Timer is currently paused or not.
+There are functions returned by **useTimer** which can pause, resume, and reset the timer/stopwatch. These are **togglePause**, **pauseTimer**, **resumeTimer**, and **resetTimer**.
 #### Example
 ```jsx
 const SomeReactComponent = () => {
