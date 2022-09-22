@@ -19,7 +19,7 @@
   "scripts": {
     "test": "vitest run",
     "test-watch": "vitest",
-    "lint": "eslint",
+    "lint": "eslint ./src",
     "build": "rm -rf dist && npx eslint ./src && npm test && microbundle"
   },
   "files": [
