@@ -1,4 +1,4 @@
-import { DirectionOfTime, Time, Timestamps, UseTimerOptions } from './types/types';
+import { DirectionOfTime, Timestamps, UseTimerOptions } from './types/types';
 import { ITimerBase } from "./interfaces/ITimerBase";
 
 interface IUnixTimestamp {
@@ -48,6 +48,6 @@ export class UnixTimestamp implements IUnixTimestamp, ITimerBase {
         return this.timestamps.start >= this.timestamps.end && this.continueAfterFinish;
     }
 
-    addTime(time: Time): void {}
-    subtractTime(time: Time): void {}
+    addTime(): void {return undefined}
+    subtractTime(): void {return undefined}
 }

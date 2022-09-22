@@ -111,7 +111,7 @@ export function handleOptionsReset(oldOptions: UseTimerOptions, adjustedOptions?
 }
 
 export function useInterval(cb: () => void, delay: number | null) {
-    const savedCB: React.MutableRefObject<() => void> = useRef<() => void>(function() {});
+    const savedCB: React.MutableRefObject<() => void> = useRef<() => void>(function() {return undefined});
   
     useEffect(() => {
       savedCB.current = cb;
@@ -122,7 +122,7 @@ export function useInterval(cb: () => void, delay: number | null) {
           savedCB.current();
         }
         if (delay !== null) {
-          let id = setInterval(tick, delay);
+          const id = setInterval(tick, delay);
           return () => clearInterval(id);
         }
     }, [delay]);

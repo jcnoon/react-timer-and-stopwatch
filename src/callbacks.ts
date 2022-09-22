@@ -51,7 +51,7 @@ export class Callbacks implements ICallbacks {
     /** Calls relevant onProgress callbacks and removes them from the array of onProgress callbacks */
     public onProgress(currentTimerTime: number): void {
         if (this.onProgressControllers.length > 0) {
-            let callbackFired: boolean = false;
+            let callbackFired = false;
             this.onProgressControllers.forEach((onProgressController) => {
                 if (currentTimerTime >= onProgressController.milliseconds) {
                     onProgressController.callback();
@@ -70,7 +70,7 @@ export class Callbacks implements ICallbacks {
     /** Calls relevant onTimeLeft callbacks and removes them from the array of onTimeLeft callbacks */
     public onTimeLeft(timeLeft: number): void {
         if (this.onTimeLeftControllers.length > 0) {
-            let callbackFired: boolean = false;
+            let callbackFired = false;
             this.onTimeLeftControllers.forEach((onTimeLeftController) => {
                 if (timeLeft <= onTimeLeftController.milliseconds) {
                     onTimeLeftController.callback();
