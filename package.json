@@ -20,7 +20,7 @@
     "test": "vitest run",
     "test-watch": "vitest",
     "lint": "eslint",
-    "build": "rm -rf dist && eslint && npm test && microbundle"
+    "build": "rm -rf dist && npx eslint ./src && npm test && microbundle"
   },
   "files": [
     "dist"
