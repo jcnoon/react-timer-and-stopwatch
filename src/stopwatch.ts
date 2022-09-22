@@ -34,13 +34,13 @@ export class Stopwatch implements ITimerBase {
     addTime(time: Time): void {
         const milliseconds = new TimeObject(time).toMilliseconds();
         this.timestamps.start += milliseconds;
-    };
+    }
 
     subtractTime(time: Time): void {
         const milliseconds = new TimeObject(time).toMilliseconds();
         this.timestamps.start -= milliseconds;
         if (this.timestamps.start < 0) this.timestamps.start = 0;
-    };
+    }
 
     isFinished = () => false;
     IsPastFinish = () => false;

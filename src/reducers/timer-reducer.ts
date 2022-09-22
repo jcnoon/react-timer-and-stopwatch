@@ -31,8 +31,10 @@ export function timerReducer(state: TimerState, action: TimerAction): TimerState
                 timeElapsed: timerController.timerBase.timestamps.end
             };
         }
-        case 'resetTimer':
-            return { ...action.payload };
+        case 'resetTimer': {
+            const payloadState = action.payload as TimerState;
+            return { ...payloadState };
+        }
         case 'timerIsPastFinish':
             return { ...state, pastFinish: true }
         default:

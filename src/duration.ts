@@ -48,7 +48,7 @@ export class Duration implements ITimerBase {
         const milliseconds = new TimeObject(time).toMilliseconds();
         const totalMilliseconds = this.timestamps.start + milliseconds;
         this.timestamps.start = totalMilliseconds > this.timestamps.end ? this.timestamps.end : totalMilliseconds;
-    };
+    }
 
     IsPastFinish = () => false;
 }

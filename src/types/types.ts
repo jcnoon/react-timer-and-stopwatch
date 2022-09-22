@@ -118,7 +118,7 @@ export type TimerActionType = 'pause' | 'resume' | 'togglePause' | 'updateTimer'
 
 export interface TimerAction {
     type: TimerActionType
-    payload?: any
+    payload?: unknown
 }
 
 export interface TimerUpdatePayload {

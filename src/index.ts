@@ -95,4 +95,4 @@ export function useTimer(options: UseTimerOptions): Timer {
         addTime,
         subtractTime
     };
-};
+}
