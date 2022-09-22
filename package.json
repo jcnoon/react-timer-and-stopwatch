@@ -1,6 +1,6 @@
 {
   "name": "react-timer-and-stopwatch",
-  "version": "0.6.6",
+  "version": "1.0.0",
   "description": "A countdown timer and stopwatch hook for React",
   "license": "MIT",
   "type": "module",
