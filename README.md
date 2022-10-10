@@ -217,11 +217,12 @@ const SomeReactComponent = () => {
             }
         }
     });
+    const {addTime, subtractTime, timerText} = timer;
     return (
         <>
             <button onClick={() => addTime({seconds: 10})}>Add 10 seconds</button>
             <button onClick={() => subtractTime({seconds: 10})}>Subtract 10 seconds</button>
-            <span>Time Left: {timer.timerText}</span>
+            <span>Time Left: {timerText}</span>
         </>
     );
 }
