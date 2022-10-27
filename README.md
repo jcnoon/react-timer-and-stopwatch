@@ -153,7 +153,7 @@ const SomeReactComponent = () => {
             <span>Time Left: {timerText}</span>
             <button onClick={pauseTimer} disabled={timerIsPaused}>Pause</button>
             <button onClick={resumeTimer} disabled={!timerIsPaused}>Resume</button>
-            <button onClick={togglePause} disabled={!timerIsPaused}>Toggle Pause</button>
+            <button onClick={togglePause}>Toggle Pause</button>
             <button onClick={() => resetTimer()}>Reset Timer</button>
         </>
     );
